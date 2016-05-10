@@ -17,11 +17,6 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 */
 
-// use fold left for accumalation until number has 500 divisors
-
-// create function that finds the ammount of divisors
-// find the primes and see how many times they occur in the number
-
 def primeFactors(num: Long): List[Long] = { 
     val exists = (2L to math.sqrt(num).toLong).find(num % _ == 0)
     exists match {
