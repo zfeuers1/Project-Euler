@@ -18,4 +18,11 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 */
 
+def collatzSequence(num: Long, length: Long): Long = {
+    if (num == 1) length
+    else if (num % 2 == 0) collatzSequence(num/2, length + 1)
+    else collatzSequence(3*num + 1, length + 1)
+}
 
+val answer = (1L to 1000000).maxBy(num => collatzSequence(num, 1))
+println(answer)
